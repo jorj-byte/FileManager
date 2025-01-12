@@ -54,13 +54,13 @@ internal class DocumentService : IDocumentService
             if (!string.IsNullOrEmpty(filter.EntityName))
                 query = query.Where(d => d.EntityName.Contains(filter.EntityName)); // فیلتر بر اساس نام فایل و نام موجودیت
             if (!string.IsNullOrEmpty(filter.FileName))
-                query = query.Where(d => d.EntityName.Contains(filter.FileName)); // فیلتر بر اساس نام فایل و نام موجودی
+                query = query.Where(d => d.EntityName.Contains(filter.FileName));
             if (!string.IsNullOrEmpty(filter.ContentType))
-                query = query.Where(d => d.ContentType==filter.ContentType); // فیلتر بر اساس نام فایل و نام موجودیت
+                query = query.Where(d => d.ContentType==filter.ContentType);
             if (filter.FromUploadDate!=default)
-                query = query.Where(d => d.UploadDate>=filter.FromUploadDate); // فیلتر بر اساس نام فایل و نام موجودیت
+                query = query.Where(d => d.UploadDate>=filter.FromUploadDate); 
             if (filter.ToUploadDate!=default)
-                query = query.Where(d => d.UploadDate<=filter.ToUploadDate); // فیلتر بر اساس نام فایل و نام موجودیت
+                query = query.Where(d => d.UploadDate<=filter.ToUploadDate); 
         }
         return await query.ToListAsync();
     }
